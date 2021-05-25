@@ -1,0 +1,29 @@
+body, html{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.playfair{
+    font-family: 'Playfair Display', serif;
+    color: #e5e5e5;
+}
+
+#home .navbar-light .navbar-brand {
+    font-family: 'Lekton', sans-serif;
+    font-size: 60px;
+    color: #e5e5e5;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+.mt-10{
+    margin-top: 10vh;
+}
+
+.btn-secondary{
+    border-radius: 0;
+    width: 190px;
+    background-color: #24A676;
+}

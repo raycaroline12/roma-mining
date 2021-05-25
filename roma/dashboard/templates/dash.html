@@ -1,0 +1,80 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/js/bootstrap.bundle.js' %}"></script>
+    <script>
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+      })
+    </script>
+
+    <link rel="shortcut icon"
+      type="image/png"
+      href="{% static '/assets/favicon.ico' %}"/>
+
+      <link href="{% static '/fontawesome/css/all.css' %}"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="{% static '/css/main.css' %}"
+        rel="stylesheet">
+    <title>Roma</title>
+
+  </head>
+  <style>
+    body{
+      background-color: #F2F2F2;
+      font-family: 'Roboto', sans-serif;  
+    }
+
+    .navbar-light .navbar-brand {
+      font-family: 'Lekton', sans-serif;
+      font-size: 40px;
+      color: #5441BF;
+    }
+
+  </style>
+  <body>
+    <div id="dashboard">
+      <div class="container-fluid px-5 mb-0">
+        <nav class="navbar navbar-light mt-2">
+          <div class="container-fluid row justify-content-between">
+            <div class="col-11">
+              <a class="navbar-brand" href="#"">
+                <img src="static/assets/roma-v2.svg"
+                    alt=""
+                    width="68"
+                    height="68"
+                    class="d-inline-block align-center">
+                ROMA
+              </a>
+            </div>
+            <div class="col-1 position-absolute end-0 ml-5">
+              <button type="button"
+                class="btn btn-sm btn-outline-success rounded-circle"
+                data-bs-container="body"
+                data-bs-toggle="popover"
+                data-bs-placement="bottom"
+                title="Acurácia"
+                data-bs-content="O modelo possui uma acurácia de 0.87 para a análise de sentimento e 0.68 para a classificação dos tópicos.">
+                i
+              </button>
+            </div>
+          </div>
+        </nav>
+        <div class="container-fluid mt-3">
+          {%load plotly_dash%}
+  
+          {% plotly_app name="RomaDash" ratio=0.4055 %} 
+        </div>
+      </div>
+    </div>     
+  </body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+{% load bootstrap %}
+
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon"
+      type="image/png"
+      href="{% static '/assets/favicon.ico' %}"/>
+
+
+    <link rel="stylesheet"
+        href="{% static '/css/main.css' %}"
+        rel="stylesheet">
+    <title>Roma</title>
+
+  </head>
+
+  <style>
+    body{
+        background-color: #5241BF;
+    }
+  </style>
+
+  <body>
+    <div id="home">
+        <div class="container">
+            <nav class="navbar navbar-light mt-4">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="static/assets/ROMA-LOGO.svg"
+                        alt=""
+                        width="90"
+                        height="90"
+                        class="d-inline-block align-center">
+                    ROMA
+                  </a>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row mt-5 gx-0">
+                    <div class="col playfair align-self-center d-flex justify-content-center">
+                        <h1>Analise o que estão<br>
+                            comentando sobre<br>
+                            o seu aplicativo.
+                        </h1>
+                    </div>
+                    <div class="col d-flex justify-content-start">
+                        <img src="static/assets/FIGURE.png"
+                            class="img-fluid align-middle">
+                    </div>
+                </div>
+                <div class="row mt-10">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}                      
+                        <div class="input-group mb-3">
+                            {{ form }}
+                            <button class="btn btn-secondary"
+                                type="submit"
+                                id="inputGroupFileAddon04">
+                                Analisar
+                            </button>
+                        </div>
+                    </form>
+                </div>    
+            </div>
+        </div>
+    </div>        
+    </body>
+</html>
