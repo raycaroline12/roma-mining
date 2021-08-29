@@ -198,6 +198,8 @@ app.layout = html.Div([
                     ]),
                     dcc.Graph(
                         id='table'),
+                    dcc.Download(
+                        id="download"),
                 ], style={
                     "backgroundColor": "#fff",
                     "box-shadow": "5px 4px 30px rgba(0, 0, 0, 0.08)",
